@@ -23,13 +23,13 @@ while done == False:
 
 hranice = zivotni_minimum*1.6
 
-zaklad = rozhodny_prijem - hranice
+prijem_nad_hranici = rozhodny_prijem - hranice
 
-castka_z_par_41_odst_2_pism_a = 0.4*(prijem_pro_bonus - zaklad)
+castka_z_par_41_odst_2_pism_a = 0.4*(prijem_pro_bonus-prijem_nad_hranici)
 if castka_z_par_41_odst_2_pism_a < 0:
     castka_z_par_41_odst_2_pism_a = 0
 
-castka_z_par_41_odst_2_pism_b = 0.3*(zaklad - hranice)
+castka_z_par_41_odst_2_pism_b = 0.3*(rozhodny_prijem - hranice)
 if castka_z_par_41_odst_2_pism_b < 0:
     castka_z_par_41_odst_2_pism_b = 0
 
@@ -37,7 +37,7 @@ if prijem_pro_bonus <= 0:
     bonus = 0
     tracker = "Domacnost nema zadny prijem pro bonus."
 # nize situace z paragrafu 41 odst 1:
-elif zaklad <= 0: 
+elif prijem_nad_hranici <= 0: 
     bonus = prijem_pro_bonus*0.4
     tracker = "Domacnost ma rozhodny prijem pod hranici 1,6 zivotniho minima."
 # nize situace z paragrafu 41 odst 3:
@@ -45,8 +45,8 @@ elif castka_z_par_41_odst_2_pism_b > castka_z_par_41_odst_2_pism_a:
     bonus = 0
     tracker = "Domacnost je v situaci z paragrafu 41 odst. 3."
 # nize situace z paragrafu 41 odst. 2:
-else: 
-    bonus = castka_z_par_41_odst_2_pism_a + castka_z_par_41_odst_2_pism_b
+else:
+    bonus = castka_z_par_41_odst_2_pism_a - castka_z_par_41_odst_2_pism_b
     tracker = "Domacnost je v situaci z paragrafu 41 odst. 2."
 
 print(f"Vyse pracovniho bonusu na zaklade zadanych castek je {bonus} Kc. {tracker}")
