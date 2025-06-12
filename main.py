@@ -26,12 +26,8 @@ hranice = zivotni_minimum*1.6
 prijem_nad_hranici = rozhodny_prijem - hranice
 
 castka_z_par_41_odst_2_pism_a = 0.4*(prijem_pro_bonus-prijem_nad_hranici)
-if castka_z_par_41_odst_2_pism_a < 0:
-    castka_z_par_41_odst_2_pism_a = 0
 
 castka_z_par_41_odst_2_pism_b = 0.3*(rozhodny_prijem - hranice)
-if castka_z_par_41_odst_2_pism_b < 0:
-    castka_z_par_41_odst_2_pism_b = 0
 
 if prijem_pro_bonus <= 0:
     bonus = 0
