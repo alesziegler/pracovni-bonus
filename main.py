@@ -50,3 +50,4 @@ else:
     tracker = "Domacnost je v situaci z paragrafu 41 odst. 2."
 
 print(f"Vyse pracovniho bonusu na zaklade zadanych castek je {bonus} Kc. {tracker}")
+print("Kompletni kod zde: https://github.com/alesziegler/pracovni-bonus/blob/main/main.py")
